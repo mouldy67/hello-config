@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello
@@ -14,20 +14,8 @@ spec:
     spec:
       containers:
       - name: hello
-        image: docker.io/nginx:v1.0
+        image: nginx:1.17
         ports:
-        - containerPort: 8080
-        env:
-          - {name: TIMBER_BACKEND_API_URL, value: "http://$(TIMBER_BACKEND_API_URL):8080"}
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+        - containerPort: 80
+
+
